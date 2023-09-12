@@ -46,7 +46,7 @@ public class Sandbox extends TestBase {
 
   @Test
   void closeBasicAuth() {
-    open("https://the-internet.herokuapp.com/basic_auth");
+    open("https://the-internet.herokuapp.com/basic_auth"); // закрытие окна авторизации !!НЕ РАБОТАЕТ!!
     actions().sendKeys(Keys.ESCAPE).perform();
    // sleep(5000);
 
@@ -54,9 +54,9 @@ public class Sandbox extends TestBase {
 
   @Test
   void findAttributeByValue() {
-    $("[name$=order]").click(); // атрибут начинается со слова order
+    $("[name^=order]").click(); // атрибут начинается со слова order
+    $("[name$=order]").click(); // атрибут заканчивается на слово order
   }
-
 
 
   @Test
